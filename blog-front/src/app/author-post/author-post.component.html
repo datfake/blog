@@ -4,23 +4,23 @@
     <form novalidate>
       <div class="control-group">
         <div class="form-group">
-          <label>Title</label>
+          <label>Tiêu đề</label>
           <input type="text" [(ngModel)]="post.title" [disabled]="processing" name="title" class="form-control"
-            placeholder="Title">
+            placeholder="Tiêu đề">
         </div>
       </div>
       <div class="control-group">
         <div class="form-group">
-          <label>Author</label>
-          <input type="text" [(ngModel)]="post.author" [disabled]="processing" name="author" class="form-control"
-            placeholder="Author">
+          <label>Mô tả ngắn</label>
+          <input type="text" [(ngModel)]="post.shortdescription" [disabled]="processing" name="shortdescription" class="form-control"
+            placeholder="Mô tả ngắn">
         </div>
       </div>
       <div class="control-group">
         <div class="form-group">
-          <label>Content</label>
+          <label>Nội dung</label>
           <textarea rows="5" [(ngModel)]="post.content" [disabled]="processing" name="content" class="form-control"
-            placeholder="Content"></textarea>
+            placeholder="Nội dung"></textarea>
         </div>
       </div>
       <br>

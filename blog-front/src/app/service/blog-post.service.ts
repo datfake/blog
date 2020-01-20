@@ -21,7 +21,7 @@ export class BlogPostService {
   }
 
   public GetPost(id: string): Observable<BlogPost> {
-    return this.apiService.Get(environment.api.entries + "/" + id).pipe(
+    return this.apiService.Get(environment.api.entries + "/posts/" + id).pipe(
       map(json => {
         return new BlogPost(json);
       })
