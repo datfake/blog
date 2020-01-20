@@ -1,0 +1,12 @@
+<div class="post-preview">
+  <a (click)="go()" class="pointer">
+    <h2 class="post-title" [textContent]="post.title">
+    </h2>
+    <h3 class="post-subtitle">{{ post.shortdescription }}
+    </h3>
+  </a>
+  <p class=" post-meta">Đọc bài viết
+    <a href="" [textContent]="post.author"></a>
+  </p>
+</div>
+<!--- .substring(0, 48) --->

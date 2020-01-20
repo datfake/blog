@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.ncc",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "monolith",
+    "baseName": "blogserver",
+    "packageName": "com.ncc",
+    "packageFolder": "com/ncc",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "M2RhYjI1ZmNhYWFhNzBiMGNkNjkyYzc1ZDgxMGZiNDJjZGE0NGU0ZTMwNTI5MTdiMDdjYzNmZTIyNDk1OTZlNGEyYzVjZjNkOWQ2OWU0MjkwYzU1MGNkYzQwNzRlZTFjM2JiNzIyOTMzZWNiZDA4MzdmNTJlMjg4MDc1MGQ2YjY=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1579491927362,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": ["en"],
+    "blueprints": [],
+    "skipClient": true
+  }
+}
