@@ -24,9 +24,11 @@ public class Post implements Serializable {
     @Column(name = "title")
     private String title;
 
+    @Lob
     @Column(name = "shortdescription")
     private String shortdescription;
 
+    @Lob
     @Column(name = "content")
     private String content;
 

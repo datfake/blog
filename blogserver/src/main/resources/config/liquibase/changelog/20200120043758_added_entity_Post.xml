@@ -19,10 +19,10 @@
             <column name="title" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="shortdescription" type="varchar(255)">
+            <column name="shortdescription" type="${clobType}">
                 <constraints nullable="true" />
             </column>
-            <column name="content" type="varchar(255)">
+            <column name="content" type="${clobType}">
                 <constraints nullable="true" />
             </column>
             <column name="category_id" type="bigint">
@@ -52,8 +52,8 @@
                   tableName="post">
             <column name="id" type="numeric"/>
             <column name="title" type="string"/>
-            <column name="shortdescription" type="string"/>
-            <column name="content" type="string"/>
+            <column name="shortdescription" type="clob"/>
+            <column name="content" type="clob"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>

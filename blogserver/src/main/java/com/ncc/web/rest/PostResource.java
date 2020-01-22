@@ -113,6 +113,14 @@ public class PostResource {
         return ResponseUtil.wrapOrNotFound(postDTO);
     }
 
+    @GetMapping("/post/{tag}")
+    public ResponseEntity<List<PostDTO>> getPostByCate(@PathVariable String tag,Pageable pageable) {
+        log.debug("REST request to get Post : {}", tag);
+        Page<PostDTO> page = postService.findAllByCategory(pageable,tag);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
     /**
      * {@code DELETE  /posts/:id} : delete the "id" post.
      *

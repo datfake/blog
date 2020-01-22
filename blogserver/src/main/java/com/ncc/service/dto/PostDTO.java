@@ -1,6 +1,7 @@
 package com.ncc.service.dto;
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.Lob;
 
 /**
  * A DTO for the {@link com.ncc.domain.Post} entity.
@@ -11,10 +12,11 @@ public class PostDTO implements Serializable {
 
     private String title;
 
+    @Lob
     private String shortdescription;
 
+    @Lob
     private String content;
-
 
     private Long categoryId;
 

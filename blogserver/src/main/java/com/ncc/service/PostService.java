@@ -5,6 +5,7 @@ import com.ncc.service.dto.PostDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -27,6 +28,8 @@ public interface PostService {
      * @return the list of entities.
      */
     Page<PostDTO> findAll(Pageable pageable);
+
+    Page<PostDTO> findAllByCategory(Pageable pageable,String tag);
 
 
     /**
