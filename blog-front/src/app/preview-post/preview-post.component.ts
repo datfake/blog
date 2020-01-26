@@ -13,7 +13,7 @@ export class PreviewPostComponent implements OnInit {
   constructor(private router: Router) {}
   ngOnInit() {}
 
-  public go(): void {
-    this.router.navigateByUrl("/post/" + this.post._id);
+  public go(value): void {
+    this.router.navigateByUrl("/post/" + value);
   }
 }

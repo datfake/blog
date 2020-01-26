@@ -1,6 +1,7 @@
 package com.ncc.repository;
 
 import com.ncc.domain.Category;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +12,6 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
-
+    Category findOneById(Long id);
+    Category findOneByTag(String tag);
 }

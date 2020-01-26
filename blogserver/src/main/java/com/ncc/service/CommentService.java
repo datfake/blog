@@ -1,47 +1,44 @@
 package com.ncc.service;
 
-import com.ncc.service.dto.PostDTO;
+import com.ncc.service.dto.CommentDTO;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 import java.util.Optional;
 
 /**
- * Service Interface for managing {@link com.ncc.domain.Post}.
+ * Service Interface for managing {@link com.ncc.domain.Comment}.
  */
-public interface PostService {
+public interface CommentService {
 
     /**
-     * Save a post.
+     * Save a comment.
      *
-     * @param postDTO the entity to save.
+     * @param commentDTO the entity to save.
      * @return the persisted entity.
      */
-    PostDTO save(PostDTO postDTO);
+    CommentDTO save(CommentDTO commentDTO);
 
     /**
-     * Get all the posts.
+     * Get all the comments.
      *
      * @param pageable the pagination information.
      * @return the list of entities.
      */
-    Page<PostDTO> findAll(Pageable pageable);
-
-    Page<PostDTO> findAllByCategory(Pageable pageable,String tag);
+    Page<CommentDTO> findAll(Pageable pageable);
 
 
     /**
-     * Get the "id" post.
+     * Get the "id" comment.
      *
      * @param id the id of the entity.
      * @return the entity.
      */
-    Optional<PostDTO> findOne(Long id);
+    Optional<CommentDTO> findOne(Long id);
 
     /**
-     * Delete the "id" post.
+     * Delete the "id" comment.
      *
      * @param id the id of the entity.
      */

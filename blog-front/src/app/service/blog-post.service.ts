@@ -21,18 +21,26 @@ export class BlogPostService {
   }
 
   public GetPost(id: string): Observable<BlogPost> {
-    return this.apiService.Get(environment.api.entries + "/" + id).pipe(
+    return this.apiService.Get(environment.api.entries + "/posts/" + id).pipe(
       map(json => {
         return new BlogPost(json);
       })
     );
   }
 
+  public GetPostBytag(tag: string): Observable<BlogPost[]> {
+    return this.apiService.Get(environment.api.entries + "/post/" + tag).pipe(
+      map(json => {
+        return json.map(post => new BlogPost(post));
+      })
+    );
+  }
+
   public CreatePost(post: BlogPost): Observable<any> {
-    return this.apiService.Post(environment.api.entries, post);
+    return this.apiService.Post(environment.api.entries + "/posts", post);
   }
 
   public deletePost(id) {
-    return this.apiService.Delete(environment.api.entries + "/" + id);
+    return this.apiService.Delete(environment.api.entries + "/posts/" + id);
   }
 }

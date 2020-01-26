@@ -4,16 +4,17 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 import java.io.Serializable;
 
 /**
- * A Post.
+ * A Comment.
  */
 @Entity
-@Table(name = "post")
+@Table(name = "comment")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class Post implements Serializable {
+public class Comment implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -21,20 +22,21 @@ public class Post implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title")
-    private String title;
+    @NotNull
+    @Column(name = "name", nullable = false)
+    private String name;
 
-    @Lob
-    @Column(name = "shortdescription")
-    private String shortdescription;
+    @Column(name = "email")
+    private String email;
 
+    
     @Lob
-    @Column(name = "content")
+    @Column(name = "content", nullable = false)
     private String content;
 
     @ManyToOne
-    @JsonIgnoreProperties("posts")
-    private Category category;
+    @JsonIgnoreProperties("comments")
+    private Post post;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -45,37 +47,37 @@ public class Post implements Serializable {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public Post title(String title) {
-        this.title = title;
+    public Comment name(String name) {
+        this.name = name;
         return this;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getShortdescription() {
-        return shortdescription;
+    public String getEmail() {
+        return email;
     }
 
-    public Post shortdescription(String shortdescription) {
-        this.shortdescription = shortdescription;
+    public Comment email(String email) {
+        this.email = email;
         return this;
     }
 
-    public void setShortdescription(String shortdescription) {
-        this.shortdescription = shortdescription;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getContent() {
         return content;
     }
 
-    public Post content(String content) {
+    public Comment content(String content) {
         this.content = content;
         return this;
     }
@@ -84,17 +86,17 @@ public class Post implements Serializable {
         this.content = content;
     }
 
-    public Category getCategory() {
-        return category;
+    public Post getPost() {
+        return post;
     }
 
-    public Post category(Category category) {
-        this.category = category;
+    public Comment post(Post post) {
+        this.post = post;
         return this;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setPost(Post post) {
+        this.post = post;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -103,10 +105,10 @@ public class Post implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Post)) {
+        if (!(o instanceof Comment)) {
             return false;
         }
-        return id != null && id.equals(((Post) o).id);
+        return id != null && id.equals(((Comment) o).id);
     }
 
     @Override
@@ -116,10 +118,10 @@ public class Post implements Serializable {
 
     @Override
     public String toString() {
-        return "Post{" +
+        return "Comment{" +
             "id=" + getId() +
-            ", title='" + getTitle() + "'" +
-            ", shortdescription='" + getShortdescription() + "'" +
+            ", name='" + getName() + "'" +
+            ", email='" + getEmail() + "'" +
             ", content='" + getContent() + "'" +
             "}";
     }

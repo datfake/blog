@@ -3,34 +3,39 @@
     "clientRootFolder": "",
     "relationships": [
         {
-            "relationshipName": "category",
-            "otherEntityName": "category",
+            "relationshipName": "post",
+            "otherEntityName": "post",
             "relationshipType": "many-to-one",
             "otherEntityField": "id",
-            "otherEntityRelationshipName": "post"
+            "otherEntityRelationshipName": "comment"
         }
     ],
     "fields": [
         {
-            "fieldName": "title",
-            "fieldType": "String"
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
         },
         {
-            "fieldName": "shortdescription",
-            "fieldType": "byte[]",
-            "fieldTypeBlobContent": "text"
+            "fieldName": "email",
+            "fieldType": "String"
         },
         {
             "fieldName": "content",
             "fieldType": "byte[]",
-            "fieldTypeBlobContent": "text"
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
         }
     ],
-    "changelogDate": "20200120043758",
+    "changelogDate": "20200122020906",
     "dto": "mapstruct",
     "searchEngine": false,
     "service": "serviceImpl",
-    "entityTableName": "post",
+    "entityTableName": "comment",
     "databaseType": "sql",
     "readOnly": false,
     "jpaMetamodelFiltering": false,
